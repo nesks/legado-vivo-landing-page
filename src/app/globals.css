@@ -2,7 +2,14 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a365d;
+  --blue-deep: #1a365d;
+  --blue-light: #2d5aa0;
+  --amber-soft: #d69e2e;
+  --amber-light: #f6e05e;
+  --white-pure: #ffffff;
+  --gray-light: #f7fafc;
+  --text-secondary: #4a5568;
 }
 
 @theme inline {
@@ -10,17 +17,50 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  /* Custom colors for LegadoVivo */
+  --color-blue-deep: var(--blue-deep);
+  --color-blue-light: var(--blue-light);
+  --color-amber-soft: var(--amber-soft);
+  --color-amber-light: var(--amber-light);
+  --color-white-pure: var(--white-pure);
+  --color-gray-light: var(--gray-light);
+  --color-text-secondary: var(--text-secondary);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--blue-deep) 0%, var(--amber-soft) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(26, 54, 93, 0.15);
 }
