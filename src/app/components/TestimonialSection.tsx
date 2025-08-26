@@ -14,13 +14,13 @@ export default function TestimonialSection() {
           </div>
           
           <blockquote id="depoimentos-quote" className="text-2xl md:text-3xl text-[#1a365d] font-medium leading-relaxed mb-8">
-            "Imagine poder ouvir novamente a voz de quem ama.<br />
-            O LegadoVivo tornará isso possível."
+            &ldquo;Imagine poder ouvir novamente a voz de quem ama.<br />
+            O LegadoVivo tornará isso possível.&rdquo;
           </blockquote>
           
           <p id="depoimentos-description" className="text-lg text-[#4a5568] leading-relaxed">
             Um dia, quando você mais precisar, uma mensagem especial chegará até você. 
-            Uma palavra de carinho, um conselho sábio, ou simplesmente um "eu te amo" 
+            Uma palavra de carinho, um conselho sábio, ou simplesmente um &ldquo;eu te amo&rdquo; 
             que atravessou o tempo para estar ali no momento exato em que você precisava ouvir.
           </p>
         </div>
