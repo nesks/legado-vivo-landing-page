@@ -1,14 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import Header from "./components/Header";
 import PlansSection from "./components/PlansSection";
 import SecuritySection from "./components/SecuritySection";
 import TestimonialSection from "./components/TestimonialSection";
 import Footer from "./components/Footer";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
 export default function LegadoVivoLanding() {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
+  
+  // Hook para scroll suave
+  useSmoothScroll();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,33 +26,33 @@ export default function LegadoVivoLanding() {
 
   return (
     <div id="legado-vivo-landing" className="min-h-screen bg-white">
+      {/* Header */}
+      <Header />
+      
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50 overflow-hidden">
-        <div id="hero-background" className="absolute inset-0 bg-gradient-to-br from-[#1a365d]/5 to-[#d69e2e]/5"></div>
+      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50 overflow-hidden pt-16">
+        <div id="hero-background" className="absolute inset-0" style={{
+          backgroundImage: 'url(/images/backgrounds/background.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}></div>
+        <div id="hero-overlay" className="absolute inset-0 bg-gradient-to-br from-[#1a365d]/80 via-[#1a365d]/70 to-[#2d5aa0]/60"></div>
         
         {/* Decorative elements */}
         <div id="hero-decoration-left" className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-[#1a365d]/10 to-[#d69e2e]/10 rounded-full blur-xl"></div>
         <div id="hero-decoration-right" className="absolute bottom-20 right-10 w-48 h-48 bg-gradient-to-br from-[#d69e2e]/10 to-[#1a365d]/10 rounded-full blur-xl"></div>
         
         <div id="hero-content" className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <div id="hero-logo-container" className="mb-8">
-            <div id="hero-logo-wrapper" className="inline-block p-4 bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg mb-8">
-              <div id="hero-logo" className="w-16 h-16 mx-auto bg-gradient-to-br from-[#1a365d] to-[#d69e2e] rounded-2xl flex items-center justify-center">
-                <svg id="hero-logo-icon" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-            </div>
-          </div>
           
-          <h1 id="hero-title" className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#1a365d] mb-6 leading-tight">
+          <h1 id="hero-title" className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
             Quando suas palavras forem{" "}
-            <span id="hero-title-highlight" className="gradient-text">eternas</span>,<br />
+            <span id="hero-title-highlight" className="text-[#f6e05e] drop-shadow-lg">eternas</span>,<br />
             seu amor jamais será esquecido
           </h1>
           
-          <p id="hero-subtitle" className="text-xl md:text-2xl text-[#4a5568] mb-12 max-w-3xl mx-auto leading-relaxed">
-            Estamos construindo o <strong id="hero-brand-name" className="text-[#1a365d]">LegadoVivo</strong>: um aplicativo seguro que transforma mensagens em legados digitais de amor.
+          <p id="hero-subtitle" className="text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+            Estamos construindo o <strong id="hero-brand-name" className="text-[#f6e05e] drop-shadow-md">LegadoVivo</strong>: um aplicativo seguro que transforma mensagens em legados digitais de amor.
           </p>
           
           <form id="hero-form" onSubmit={handleSubscribe} className="max-w-md mx-auto">
@@ -59,32 +64,18 @@ export default function LegadoVivoLanding() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Seu melhor e-mail"
                 required
-                className="flex-1 px-6 py-4 text-lg border-2 border-[#1a365d]/20 rounded-xl focus:border-[#d69e2e] focus:outline-none transition-colors bg-white/80 backdrop-blur-sm"
+                className="flex-1 px-6 py-4 text-lg border-2 border-white/30 rounded-xl focus:border-[#f6e05e] focus:outline-none transition-colors bg-white/90 backdrop-blur-sm text-[#1a365d] placeholder-[#1a365d]/70 font-medium"
               />
               <button
                 id="hero-submit-btn"
                 type="submit"
                 disabled={isSubscribed}
-                className="px-8 py-4 bg-gradient-to-r from-[#1a365d] to-[#2d5aa0] text-white text-lg font-semibold rounded-xl hover:from-[#2d5aa0] hover:to-[#1a365d] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50"
+                className="px-8 py-4 bg-gradient-to-r from-[#f6e05e] to-[#d69e2e] text-[#1a365d] text-lg font-bold rounded-xl hover:from-[#d69e2e] hover:to-[#f6e05e] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 disabled:opacity-50 drop-shadow-lg"
               >
                 {isSubscribed ? "✓ Inscrito!" : "Quero ser avisado no lançamento"}
               </button>
             </div>
           </form>
-          
-          <div id="hero-illustration-container" className="mt-16">
-            <div id="hero-illustration-wrapper" className="inline-block p-8 bg-white/60 backdrop-blur-sm rounded-3xl shadow-lg">
-              <div id="hero-illustration-icon" className="w-24 h-24 mx-auto bg-gradient-to-br from-[#d69e2e]/20 to-[#1a365d]/20 rounded-2xl flex items-center justify-center mb-4">
-                <svg id="hero-phone-icon" className="w-12 h-12 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <p id="hero-illustration-text" className="text-[#4a5568] text-sm">
-                Pessoa segurando celular com luz suave,<br />
-                simbolizando mensagem eterna
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 

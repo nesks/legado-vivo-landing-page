@@ -53,10 +53,13 @@ export default function Footer() {
         <div id="footer-bottom" className="border-t border-white/20 pt-8">
           <div id="footer-bottom-content" className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div id="footer-brand" className="flex items-center space-x-2">
-              <div id="footer-logo" className="w-8 h-8 bg-gradient-to-br from-[#d69e2e] to-[#f6e05e] rounded-lg flex items-center justify-center">
-                <svg id="footer-logo-icon" className="w-4 h-4 text-[#1a365d]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+              <div id="footer-logo" className="w-8 h-8 flex items-center justify-center">
+                <img 
+                  id="footer-logo-image" 
+                  src="/images/logos/logo.webp" 
+                  alt="Logo LegadoVivo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span id="footer-brand-text" className="text-xl font-semibold">LegadoVivo</span>
             </div>
