@@ -41,7 +41,7 @@ export default function Header() {
           <div id="header-logo" className="flex items-center">
             <div 
               id="header-logo-wrapper" 
-              className={`flex items-center justify-center p-2 backdrop-blur-sm rounded-xl transition-all duration-300 ${
+              className={`flex items-center justify-center backdrop-blur-sm rounded-xl transition-all duration-300 ${
                 isScrolled 
                   ? 'bg-white/90' 
                   : 'bg-white/20'
