@@ -20,7 +20,7 @@ export const useAdParameter = () => {
       const adParam = urlParams.get('ad');
       
       if (adParam && ['A', 'B', 'C'].includes(adParam.toUpperCase())) {
-        const newAdType = adParam.toUpperCase() as AdType;
+        const newAdType = adParam.toUpperCase() as Exclude<AdType, null>;
         setAdType(newAdType);
         // Salvar no localStorage
         localStorage.setItem('legado-vivo-ad', newAdType);
