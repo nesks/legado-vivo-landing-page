@@ -68,58 +68,97 @@ export default function LegadoVivoLanding() {
             Estamos construindo o <strong id="hero-brand-name" className="text-[#f6e05e] drop-shadow-md">LegadoVivo</strong>: um aplicativo seguro que transforma mensagens em legados digitais de amor.
           </p>
           
-          <form id="hero-form" onSubmit={handleSubscribe} className="max-w-md mx-auto">
-            <div id="hero-form-wrapper" className="flex flex-col gap-3 sm:gap-4">
-              <input
-                id="hero-email-input"
-                type="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  if (error || success) {
-                    resetState(); // Limpar estado quando o usuário começar a digitar novamente
-                  }
-                }}
-                placeholder="Seu melhor e-mail"
-                required
-                disabled={isLoading}
-                className="w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg border-2 border-white/30 rounded-xl focus:border-[#f6e05e] focus:outline-none transition-colors bg-white/90 backdrop-blur-sm text-[#1a365d] placeholder-[#1a365d]/70 font-medium disabled:bg-gray-100 disabled:cursor-not-allowed"
-              />
+          {/* Formulário de Email */}
+          {!success ? (
+            <form id="hero-form" onSubmit={handleSubscribe} className="max-w-md mx-auto">
+              <div id="hero-form-wrapper" className="flex flex-col gap-3 sm:gap-4">
+                <input
+                  id="hero-email-input"
+                  type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (error) {
+                      resetState(); // Limpar estado quando o usuário começar a digitar novamente
+                    }
+                  }}
+                  placeholder="Seu melhor e-mail"
+                  required
+                  disabled={isLoading}
+                  className="w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg border-2 border-white/30 rounded-xl focus:border-[#f6e05e] focus:outline-none transition-all duration-500 bg-white/90 backdrop-blur-sm text-[#1a365d] placeholder-[#1a365d]/70 font-medium disabled:bg-gray-100 disabled:cursor-not-allowed"
+                />
+                <button
+                  id="hero-submit-btn"
+                  type="submit"
+                  disabled={isLoading || !email.trim()}
+                  className="w-full px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#f6e05e] to-[#d69e2e] text-[#1a365d] text-base sm:text-lg font-bold rounded-xl hover:from-[#d69e2e] hover:to-[#f6e05e] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 disabled:opacity-50 drop-shadow-lg disabled:cursor-not-allowed whitespace-nowrap"
+                >
+                  <span className="hidden sm:inline">
+                    {isLoading ? "Salvando..." : "Quero ser avisado no lançamento"}
+                  </span>
+                  <span className="sm:hidden">
+                    {isLoading ? "Salvando..." : "Quero ser avisado"}
+                  </span>
+                </button>
+              </div>
+              
+              {/* Mensagens de erro */}
+              {error && (
+                <div className="mt-4 p-3 bg-red-100/90 border border-red-400 text-red-700 rounded-xl backdrop-blur-sm animate-pulse">
+                  {error}
+                </div>
+              )}
+              
+              {/* Informações de debug (comentar em produção) */}
+              {process.env.NODE_ENV === 'development' && deviceInfo && (
+                <div className="mt-4 p-3 bg-blue-100/90 border border-blue-400 text-blue-700 rounded-xl backdrop-blur-sm text-sm">
+                  <strong>Debug:</strong> Dispositivo: {deviceInfo.isIOS ? 'iOS' : 'Outros'} | Parâmetro: {deviceInfo.adType || 'Não definido'}
+                </div>
+              )}
+            </form>
+          ) : (
+            /* Animação de Sucesso - Entregar Amor */
+            <div className="max-w-md mx-auto text-center animate-fade-in">
+              {/* Ícone de Coração Animado */}
+              <div className="mb-6 animate-bounce">
+                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center shadow-2xl animate-pulse">
+                  <svg className="w-12 h-12 text-white animate-heartbeat" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+              </div>
+
+              {/* Mensagem Principal */}
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 drop-shadow-lg animate-fade-in-up">
+                Amor Registrado! 💝
+              </h3>
+
+              {/* Mensagem Secundária */}
+              <p className="text-lg sm:text-xl text-white/90 mb-6 leading-relaxed drop-shadow-md animate-fade-in-up animation-delay-200">
+                Sua mensagem de amor será entregue no momento certo, 
+                <span className="text-[#f6e05e] font-semibold"> preservando seu legado de carinho</span> para sempre.
+              </p>
+
+              {/* Ícones Flutuantes */}
+              <div className="relative mb-6">
+                <div className="absolute -top-4 -left-4 w-8 h-8 bg-yellow-300 rounded-full animate-float opacity-80"></div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-pink-300 rounded-full animate-float animation-delay-300 opacity-80"></div>
+                <div className="absolute -bottom-2 left-4 w-4 h-4 bg-blue-300 rounded-full animate-float animation-delay-500 opacity-80"></div>
+                <div className="absolute -bottom-4 right-6 w-5 h-5 bg-green-300 rounded-full animate-float animation-delay-700 opacity-80"></div>
+              </div>
+
+              {/* Botão de Reset */}
               <button
-                id="hero-submit-btn"
-                type="submit"
-                disabled={isLoading || !email.trim()}
-                className="w-full px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#f6e05e] to-[#d69e2e] text-[#1a365d] text-base sm:text-lg font-bold rounded-xl hover:from-[#d69e2e] hover:to-[#f6e05e] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 disabled:opacity-50 drop-shadow-lg disabled:cursor-not-allowed whitespace-nowrap"
+                onClick={() => {
+                  resetState();
+                  setEmail("");
+                }}
+                className="px-6 py-3 bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/30 transition-all duration-300 animate-fade-in-up animation-delay-500"
               >
-                <span className="hidden sm:inline">
-                  {isLoading ? "Salvando..." : success ? "✓ Email Salvo!" : "Quero ser avisado no lançamento"}
-                </span>
-                <span className="sm:hidden">
-                  {isLoading ? "Salvando..." : success ? "✓ Salvo!" : "Quero ser avisado"}
-                </span>
+                Cadastrar Outro Email
               </button>
             </div>
-            
-            {/* Mensagens de feedback */}
-            {error && (
-              <div className="mt-4 p-3 bg-red-100/90 border border-red-400 text-red-700 rounded-xl backdrop-blur-sm">
-                {error}
-              </div>
-            )}
-
-            {success && (
-              <div className="mt-4 p-3 bg-green-100/90 border border-green-400 text-green-700 rounded-xl backdrop-blur-sm">
-                Email cadastrado com sucesso! Você será avisado sobre o lançamento.
-              </div>
-            )}
-            
-            {/* Informações de debug (comentar em produção) */}
-            {process.env.NODE_ENV === 'development' && deviceInfo && (
-              <div className="mt-4 p-3 bg-blue-100/90 border border-blue-400 text-blue-700 rounded-xl backdrop-blur-sm text-sm">
-                <strong>Debug:</strong> Dispositivo: {deviceInfo.isIOS ? 'iOS' : 'Outros'} | Parâmetro: {deviceInfo.adType || 'Não definido'}
-              </div>
-            )}
-          </form>
+          )}
         </div>
       </section>
 

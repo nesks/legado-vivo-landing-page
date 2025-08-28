@@ -50,7 +50,7 @@ export const plansData: Record<Exclude<AdType, null>, AdData> = {
         id: "avancado",
         emoji: "⚡",
         name: "Avançado",
-        price: "R$ 34,90",
+        price: "R$ 24,90",
         period: "/mês",
         popular: true,
         gradient: { from: "#d69e2e", to: "#f6e05e" },
