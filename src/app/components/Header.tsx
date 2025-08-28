@@ -31,8 +31,8 @@ export default function Header() {
       id="header" 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#1a365d] shadow-lg border-b border-[#2d5aa0]/20' 
-          : 'bg-white/10 backdrop-blur-md border-b border-white/20'
+          ? 'bg-[#1a365d] shadow-lg border-b border-[#2d5aa0]/20 translate-y-0' 
+          : 'bg-white/10 backdrop-blur-md border-b border-white/20 md:translate-y-0 -translate-y-full md:block'
       }`}
     >
       <div id="header-container" className="max-w-7xl mx-auto px-6">
@@ -111,12 +111,7 @@ export default function Header() {
             >
               Segurança
             </a>
-            <a 
-              href="#hero-form"
-              className="px-6 py-2 bg-gradient-to-r from-[#f6e05e] to-[#d69e2e] text-[#1a365d] font-semibold rounded-lg hover:from-[#d69e2e] hover:to-[#f6e05e] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-block"
-            >
-              Inscrever-se
-            </a>
+            {/* Botão Inscrever-se escondido conforme solicitado */}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -188,13 +183,7 @@ export default function Header() {
             >
               Segurança
             </a>
-            <a 
-              href="#hero-form"
-              className="block w-full px-6 py-3 bg-gradient-to-r from-[#f6e05e] to-[#d69e2e] text-[#1a365d] font-semibold rounded-lg hover:from-[#d69e2e] hover:to-[#f6e05e] transition-all duration-300 shadow-lg text-center"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Inscrever-se
-            </a>
+            {/* Botão Inscrever-se mobile escondido conforme solicitado */}
           </nav>
         </div>
       </div>

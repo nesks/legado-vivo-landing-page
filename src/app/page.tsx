@@ -43,7 +43,7 @@ export default function LegadoVivoLanding() {
       <Header />
       
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50 overflow-hidden pt-16">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50 overflow-hidden pt-4 pb-8 sm:pt-16">
         <div id="hero-background" className="absolute inset-0" style={{
           backgroundImage: 'url(/images/backgrounds/background.png)',
           backgroundSize: 'cover',
@@ -58,18 +58,18 @@ export default function LegadoVivoLanding() {
         
         <div id="hero-content" className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           
-          <h1 id="hero-title" className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+          <h1 id="hero-title" className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-2xl">
             Quando suas palavras forem{" "}
             <span id="hero-title-highlight" className="text-[#f6e05e] drop-shadow-lg">eternas</span>,<br />
             seu amor jamais será esquecido
           </h1>
           
-          <p id="hero-subtitle" className="text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+          <p id="hero-subtitle" className="text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
             Estamos construindo o <strong id="hero-brand-name" className="text-[#f6e05e] drop-shadow-md">LegadoVivo</strong>: um aplicativo seguro que transforma mensagens em legados digitais de amor.
           </p>
           
           <form id="hero-form" onSubmit={handleSubscribe} className="max-w-md mx-auto">
-            <div id="hero-form-wrapper" className="flex flex-col sm:flex-row gap-4">
+            <div id="hero-form-wrapper" className="flex flex-col gap-3 sm:gap-4">
               <input
                 id="hero-email-input"
                 type="email"
@@ -83,15 +83,20 @@ export default function LegadoVivoLanding() {
                 placeholder="Seu melhor e-mail"
                 required
                 disabled={isLoading}
-                className="flex-1 px-6 py-4 text-lg border-2 border-white/30 rounded-xl focus:border-[#f6e05e] focus:outline-none transition-colors bg-white/90 backdrop-blur-sm text-[#1a365d] placeholder-[#1a365d]/70 font-medium disabled:bg-gray-100 disabled:cursor-not-allowed"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg border-2 border-white/30 rounded-xl focus:border-[#f6e05e] focus:outline-none transition-colors bg-white/90 backdrop-blur-sm text-[#1a365d] placeholder-[#1a365d]/70 font-medium disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
               <button
                 id="hero-submit-btn"
                 type="submit"
                 disabled={isLoading || !email.trim()}
-                className="px-8 py-4 bg-gradient-to-r from-[#f6e05e] to-[#d69e2e] text-[#1a365d] text-lg font-bold rounded-xl hover:from-[#d69e2e] hover:to-[#f6e05e] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 disabled:opacity-50 drop-shadow-lg disabled:cursor-not-allowed"
+                className="w-full px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#f6e05e] to-[#d69e2e] text-[#1a365d] text-base sm:text-lg font-bold rounded-xl hover:from-[#d69e2e] hover:to-[#f6e05e] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 disabled:opacity-50 drop-shadow-lg disabled:cursor-not-allowed whitespace-nowrap"
               >
-                {isLoading ? "Salvando..." : success ? "✓ Email Salvo!" : "Quero ser avisado no lançamento"}
+                <span className="hidden sm:inline">
+                  {isLoading ? "Salvando..." : success ? "✓ Email Salvo!" : "Quero ser avisado no lançamento"}
+                </span>
+                <span className="sm:hidden">
+                  {isLoading ? "Salvando..." : success ? "✓ Salvo!" : "Quero ser avisado"}
+                </span>
               </button>
             </div>
             
