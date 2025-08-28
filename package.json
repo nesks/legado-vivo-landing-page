@@ -11,7 +11,9 @@
     "db:generate": "prisma generate",
     "db:studio": "prisma studio",
     "db:push": "prisma db push",
-    "db:reset": "prisma migrate reset"
+    "db:reset": "prisma migrate reset",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
     "@prisma/client": "^6.15.0",
