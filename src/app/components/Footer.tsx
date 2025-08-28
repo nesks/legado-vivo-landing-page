@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -54,10 +55,12 @@ export default function Footer() {
           <div id="footer-bottom-content" className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div id="footer-brand" className="flex items-center space-x-2">
               <div id="footer-logo" className="w-8 h-8 flex items-center justify-center">
-                <img 
+                <Image 
                   id="footer-logo-image" 
                   src="/images/logos/logo.webp" 
                   alt="Logo LegadoVivo" 
+                  width={32}
+                  height={32}
                   className="w-full h-full object-contain"
                 />
               </div>

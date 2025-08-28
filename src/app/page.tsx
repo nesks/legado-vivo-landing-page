@@ -7,20 +7,33 @@ import SecuritySection from "./components/SecuritySection";
 import TestimonialSection from "./components/TestimonialSection";
 import Footer from "./components/Footer";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
+import { useEmailSubmission } from "./hooks/useEmailSubmission";
 
 export default function LegadoVivoLanding() {
   const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
   
   // Hook para scroll suave
   useSmoothScroll();
+  
+  // Hook para submissão de email
+  const { 
+    submitEmail, 
+    isLoading, 
+    error, 
+    success, 
+    resetState,
+    deviceInfo 
+  } = useEmailSubmission();
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setIsSubscribed(true);
-      setTimeout(() => setIsSubscribed(false), 3000);
-      setEmail("");
+    if (email.trim()) {
+      const result = await submitEmail({ email });
+      
+      if (result.success) {
+        setEmail(""); // Limpar o campo após sucesso
+        console.log("Email salvo com sucesso:", result);
+      }
     }
   };
 
@@ -61,20 +74,46 @@ export default function LegadoVivoLanding() {
                 id="hero-email-input"
                 type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (error || success) {
+                    resetState(); // Limpar estado quando o usuário começar a digitar novamente
+                  }
+                }}
                 placeholder="Seu melhor e-mail"
                 required
-                className="flex-1 px-6 py-4 text-lg border-2 border-white/30 rounded-xl focus:border-[#f6e05e] focus:outline-none transition-colors bg-white/90 backdrop-blur-sm text-[#1a365d] placeholder-[#1a365d]/70 font-medium"
+                disabled={isLoading}
+                className="flex-1 px-6 py-4 text-lg border-2 border-white/30 rounded-xl focus:border-[#f6e05e] focus:outline-none transition-colors bg-white/90 backdrop-blur-sm text-[#1a365d] placeholder-[#1a365d]/70 font-medium disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
               <button
                 id="hero-submit-btn"
                 type="submit"
-                disabled={isSubscribed}
-                className="px-8 py-4 bg-gradient-to-r from-[#f6e05e] to-[#d69e2e] text-[#1a365d] text-lg font-bold rounded-xl hover:from-[#d69e2e] hover:to-[#f6e05e] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 disabled:opacity-50 drop-shadow-lg"
+                disabled={isLoading || !email.trim()}
+                className="px-8 py-4 bg-gradient-to-r from-[#f6e05e] to-[#d69e2e] text-[#1a365d] text-lg font-bold rounded-xl hover:from-[#d69e2e] hover:to-[#f6e05e] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 disabled:opacity-50 drop-shadow-lg disabled:cursor-not-allowed"
               >
-                {isSubscribed ? "✓ Inscrito!" : "Quero ser avisado no lançamento"}
+                {isLoading ? "Salvando..." : success ? "✓ Email Salvo!" : "Quero ser avisado no lançamento"}
               </button>
             </div>
+            
+            {/* Mensagens de feedback */}
+            {error && (
+              <div className="mt-4 p-3 bg-red-100/90 border border-red-400 text-red-700 rounded-xl backdrop-blur-sm">
+                {error}
+              </div>
+            )}
+
+            {success && (
+              <div className="mt-4 p-3 bg-green-100/90 border border-green-400 text-green-700 rounded-xl backdrop-blur-sm">
+                Email cadastrado com sucesso! Você será avisado sobre o lançamento.
+              </div>
+            )}
+            
+            {/* Informações de debug (comentar em produção) */}
+            {process.env.NODE_ENV === 'development' && deviceInfo && (
+              <div className="mt-4 p-3 bg-blue-100/90 border border-blue-400 text-blue-700 rounded-xl backdrop-blur-sm text-sm">
+                <strong>Debug:</strong> Dispositivo: {deviceInfo.isIOS ? 'iOS' : 'Outros'} | Parâmetro: {deviceInfo.adType || 'Não definido'}
+              </div>
+            )}
           </form>
         </div>
       </section>

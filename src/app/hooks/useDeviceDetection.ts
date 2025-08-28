@@ -10,7 +10,7 @@ export const useDeviceDetection = () => {
     const detectDevice = () => {
       // Detectar iOS através do User Agent
       const userAgent = window.navigator.userAgent;
-      const isIOSDevice = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream;
+      const isIOSDevice = /iPad|iPhone|iPod/.test(userAgent) && !('MSStream' in window);
       
       setIsIOS(isIOSDevice);
       setIsLoading(false);

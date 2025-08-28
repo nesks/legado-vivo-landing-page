@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,10 +48,12 @@ export default function Header() {
                   : 'bg-white/20'
               }`}
             >
-              <img 
+              <Image 
                 id="header-logo-image" 
                 src="/images/logos/logo.webp" 
                 alt="Logo LegadoVivo" 
+                width={40}
+                height={40}
                 className="w-10 h-10 object-contain"
               />
             </div>
