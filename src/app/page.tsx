@@ -71,20 +71,20 @@ export default function LegadoVivoLanding() {
         <div id="hero-content" className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           
           {/* Logo no Mobile - aparece apenas quando o header está escondido */}
-          <div id="hero-mobile-logo" className="md:hidden mb-12 -mt-8 animate-fade-in">
+          <div id="hero-mobile-logo" className="md:hidden mb-6 animate-fade-in">
             <div className="flex justify-center">
               <Image 
                 id="hero-mobile-logo-image"
                 src="/images/logos/logo.png" 
                 alt="Logo LegadoVivo" 
-                width={128}
-                height={128}
-                className="w-32 h-32 object-contain drop-shadow-2xl"
+                width={120}
+                height={120}
+                className="w-28 h-28 object-contain drop-shadow-2xl"
               />
             </div>
           </div>
           
-          <h1 id="hero-title" className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-2xl">
+          <h1 id="hero-title" className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 sm:mb-6 leading-tight drop-shadow-2xl">
             Quando suas palavras forem{" "}
             <span id="hero-title-highlight" className="text-[#f6e05e] drop-shadow-lg">eternas</span>,<br />
             seu amor jamais será esquecido
