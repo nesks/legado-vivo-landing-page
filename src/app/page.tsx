@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Header from "./components/Header";
 import PlansSection from "./components/PlansSection";
 import SecuritySection from "./components/SecuritySection";
@@ -72,10 +73,12 @@ export default function LegadoVivoLanding() {
           {/* Logo no Mobile - aparece apenas quando o header está escondido */}
           <div id="hero-mobile-logo" className="md:hidden mb-12 -mt-8 animate-fade-in">
             <div className="flex justify-center">
-              <img 
+              <Image 
                 id="hero-mobile-logo-image"
                 src="/images/logos/logo.png" 
                 alt="Logo LegadoVivo" 
+                width={128}
+                height={128}
                 className="w-32 h-32 object-contain drop-shadow-2xl"
               />
             </div>

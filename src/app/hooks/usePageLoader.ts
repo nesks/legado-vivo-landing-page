@@ -26,7 +26,7 @@ export function usePageLoader(): UsePageLoaderReturn {
         const totalAssets = criticalAssets.length;
 
         const loadPromises = criticalAssets.map((src) => {
-          return new Promise<void>((resolve, reject) => {
+          return new Promise<void>((resolve) => {
             const img = new Image();
             
             img.onload = () => {

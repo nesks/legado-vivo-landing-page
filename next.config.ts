@@ -28,9 +28,11 @@ const nextConfig: NextConfig = {
 
   // Configurações experimentais para melhor performance
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['react', 'react-dom'],
   },
+
+  // Configurações de output
+  output: 'standalone',
 };
 
 export default nextConfig;

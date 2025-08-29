@@ -48,7 +48,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
       clearInterval(progressInterval);
       clearInterval(messageInterval);
     };
-  }, [onLoadingComplete]);
+  }, [onLoadingComplete, messages.length]);
 
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-[#1a365d] via-[#2d5aa0] to-[#1a365d] z-50 flex items-center justify-center overflow-hidden">
