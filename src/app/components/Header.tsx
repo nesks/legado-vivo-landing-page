@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useAdParameter } from "../hooks/useAdParameter";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const adType = useAdParameter();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -39,7 +41,7 @@ export default function Header() {
         <div id="header-content" className="flex items-center justify-between h-16">
           
           {/* Logo */}
-          <div id="header-logo" className="flex items-center">
+          <div id="header-logo" className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div 
               id="header-logo-wrapper" 
               className="flex items-center justify-center transition-all duration-300"
@@ -87,16 +89,18 @@ export default function Header() {
             >
               Como Funciona
             </a>
-            <a 
-              href="#planos" 
-              className={`transition-colors duration-200 font-medium ${
-                isScrolled 
-                  ? 'text-white/90 hover:text-white' 
-                  : 'text-white/90 hover:text-white drop-shadow-sm'
-              }`}
-            >
-              Planos
-            </a>
+            {adType && (
+              <a 
+                href="#planos" 
+                className={`transition-colors duration-200 font-medium ${
+                  isScrolled 
+                    ? 'text-white/90 hover:text-white' 
+                    : 'text-white/90 hover:text-white drop-shadow-sm'
+                }`}
+              >
+                Planos
+              </a>
+            )}
             <a 
               href="#seguranca" 
               className={`transition-colors duration-200 font-medium ${
@@ -165,13 +169,15 @@ export default function Header() {
             >
               Como Funciona
             </a>
-            <a 
-              href="#planos" 
-              className="block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Planos
-            </a>
+            {adType && (
+              <a 
+                href="#planos" 
+                className="block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Planos
+              </a>
+            )}
             <a 
               href="#seguranca" 
               className="block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2"

@@ -71,15 +71,15 @@ export default function LegadoVivoLanding() {
         <div id="hero-content" className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           
           {/* Logo no Mobile - aparece apenas quando o header está escondido */}
-          <div id="hero-mobile-logo" className="md:hidden mb-6 animate-fade-in">
+          <div id="hero-mobile-logo" className="md:hidden mb-6 -mt-8 animate-fade-in">
             <div className="flex justify-center">
               <Image 
                 id="hero-mobile-logo-image"
                 src="/images/logos/logo.png" 
                 alt="Logo LegadoVivo" 
-                width={120}
-                height={120}
-                className="w-28 h-28 object-contain drop-shadow-2xl"
+                width={160}
+                height={160}
+                className="w-40 h-40 object-contain drop-shadow-2xl"
               />
             </div>
           </div>
