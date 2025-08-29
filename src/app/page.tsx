@@ -135,8 +135,8 @@ export default function LegadoVivoLanding() {
 
               {/* Mensagem Secundária */}
               <p className="text-lg sm:text-xl text-white/90 mb-6 leading-relaxed drop-shadow-md animate-fade-in-up animation-delay-200">
-                Sua mensagem de amor será entregue no momento certo, 
-                <span className="text-[#f6e05e] font-semibold"> preservando seu legado de carinho</span> para sempre.
+                Vamos te avisar por email assim que o 
+                <span className="text-[#f6e05e] font-semibold"> LegadoVivo</span> estiver no ar!
               </p>
 
               {/* Ícones Flutuantes */}
