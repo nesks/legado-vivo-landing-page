@@ -30,6 +30,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        {/* Preload da imagem de fundo crítica */}
+        <link
+          rel="preload"
+          href="/images/backgrounds/background.png"
+          as="image"
+          type="image/png"
+        />
+        {/* Preload de outras imagens críticas se necessário */}
+        <link
+          rel="preload"
+          href="/images/logos/logo.webp"
+          as="image"
+          type="image/webp"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

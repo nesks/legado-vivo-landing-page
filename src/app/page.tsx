@@ -6,14 +6,20 @@ import PlansSection from "./components/PlansSection";
 import SecuritySection from "./components/SecuritySection";
 import TestimonialSection from "./components/TestimonialSection";
 import Footer from "./components/Footer";
+import LoadingScreen from "./components/LoadingScreen";
+import LazySection from "./components/LazySection";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 import { useEmailSubmission } from "./hooks/useEmailSubmission";
+import { usePageLoader } from "./hooks/usePageLoader";
 
 export default function LegadoVivoLanding() {
   const [email, setEmail] = useState("");
   
   // Hook para scroll suave
   useSmoothScroll();
+  
+  // Hook para carregamento da página
+  const { isLoading: isPageLoading } = usePageLoader();
   
   // Hook para submissão de email
   const { 
@@ -37,14 +43,19 @@ export default function LegadoVivoLanding() {
     }
   };
 
+  // Mostrar tela de loading enquanto carrega
+  if (isPageLoading) {
+    return <LoadingScreen onLoadingComplete={() => {}} />;
+  }
+
   return (
-    <div id="legado-vivo-landing" className="min-h-screen bg-white">
+    <div id="legado-vivo-landing" className="min-h-screen bg-white animate-fade-in">
       {/* Header */}
       <Header />
       
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50 overflow-hidden pt-4 pb-8 sm:pt-16">
-        <div id="hero-background" className="absolute inset-0" style={{
+      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50 overflow-hidden pt-4 pb-8 sm:pt-16 page-transition-enter-active">
+        <div id="hero-background" className="absolute inset-0 bg-optimized will-change-transform" style={{
           backgroundImage: 'url(/images/backgrounds/background.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -57,6 +68,18 @@ export default function LegadoVivoLanding() {
         <div id="hero-decoration-right" className="absolute bottom-20 right-10 w-48 h-48 bg-gradient-to-br from-[#d69e2e]/10 to-[#1a365d]/10 rounded-full blur-xl"></div>
         
         <div id="hero-content" className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          
+          {/* Logo no Mobile - aparece apenas quando o header está escondido */}
+          <div id="hero-mobile-logo" className="md:hidden mb-12 -mt-8 animate-fade-in">
+            <div className="flex justify-center">
+              <img 
+                id="hero-mobile-logo-image"
+                src="/images/logos/logo.png" 
+                alt="Logo LegadoVivo" 
+                className="w-32 h-32 object-contain drop-shadow-2xl"
+              />
+            </div>
+          </div>
           
           <h1 id="hero-title" className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-2xl">
             Quando suas palavras forem{" "}
@@ -295,11 +318,22 @@ export default function LegadoVivoLanding() {
         </div>
       </section>
 
-      {/* Seções importadas */}
-      <PlansSection />
-      <SecuritySection />
-      <TestimonialSection />
-      <Footer />
+      {/* Seções importadas com lazy loading */}
+      <LazySection>
+        <PlansSection />
+      </LazySection>
+      
+      <LazySection>
+        <SecuritySection />
+      </LazySection>
+      
+      <LazySection>
+        <TestimonialSection />
+      </LazySection>
+      
+      <LazySection>
+        <Footer />
+      </LazySection>
     </div>
   );
 }

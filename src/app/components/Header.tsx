@@ -42,15 +42,11 @@ export default function Header() {
           <div id="header-logo" className="flex items-center">
             <div 
               id="header-logo-wrapper" 
-              className={`flex items-center justify-center backdrop-blur-sm rounded-xl transition-all duration-300 ${
-                isScrolled 
-                  ? 'bg-white/90' 
-                  : 'bg-white/20'
-              }`}
+              className="flex items-center justify-center transition-all duration-300"
             >
               <Image 
                 id="header-logo-image" 
-                src="/images/logos/logo.webp" 
+                src="/images/logos/logo-sem-titulo.png" 
                 alt="Logo LegadoVivo" 
                 width={40}
                 height={40}
