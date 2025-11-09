@@ -69,49 +69,68 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav id="header-nav-desktop" className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#sobre" 
+            <a
+              href="#sobre"
               className={`transition-colors duration-200 font-medium ${
-                isScrolled 
-                  ? 'text-white/90 hover:text-white' 
+                isScrolled
+                  ? 'text-white/90 hover:text-white'
                   : 'text-white/90 hover:text-white drop-shadow-sm'
               }`}
             >
               Sobre
             </a>
-            <a 
-              href="#como-funciona" 
+            <a
+              href="#como-funciona"
               className={`transition-colors duration-200 font-medium ${
-                isScrolled 
-                  ? 'text-white/90 hover:text-white' 
+                isScrolled
+                  ? 'text-white/90 hover:text-white'
                   : 'text-white/90 hover:text-white drop-shadow-sm'
               }`}
             >
               Como Funciona
             </a>
             {adType && (
-              <a 
-                href="#planos" 
+              <a
+                href="#planos"
                 className={`transition-colors duration-200 font-medium ${
-                  isScrolled 
-                    ? 'text-white/90 hover:text-white' 
+                  isScrolled
+                    ? 'text-white/90 hover:text-white'
                     : 'text-white/90 hover:text-white drop-shadow-sm'
                 }`}
               >
                 Planos
               </a>
             )}
-            <a 
-              href="#seguranca" 
+            <a
+              href="#seguranca"
               className={`transition-colors duration-200 font-medium ${
-                isScrolled 
-                  ? 'text-white/90 hover:text-white' 
+                isScrolled
+                  ? 'text-white/90 hover:text-white'
                   : 'text-white/90 hover:text-white drop-shadow-sm'
               }`}
             >
               Segurança
             </a>
-            {/* Botão Inscrever-se escondido conforme solicitado */}
+            <a
+              href="#faq"
+              className={`transition-colors duration-200 font-medium ${
+                isScrolled
+                  ? 'text-white/90 hover:text-white'
+                  : 'text-white/90 hover:text-white drop-shadow-sm'
+              }`}
+            >
+              FAQ
+            </a>
+            <a
+              href="#contato"
+              className={`transition-colors duration-200 font-medium ${
+                isScrolled
+                  ? 'text-white/90 hover:text-white'
+                  : 'text-white/90 hover:text-white drop-shadow-sm'
+              }`}
+            >
+              Contato
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -147,45 +166,58 @@ export default function Header() {
             isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           } overflow-hidden`}
         >
-          <nav 
-            id="header-nav-mobile" 
+          <nav
+            id="header-nav-mobile"
             className={`py-4 space-y-4 border-t transition-all duration-300 ${
-              isScrolled 
-                ? 'border-white/30' 
+              isScrolled
+                ? 'border-white/30'
                 : 'border-white/20'
             }`}
           >
-            <a 
-              href="#sobre" 
+            <a
+              href="#sobre"
               className="block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Sobre
             </a>
-            <a 
-              href="#como-funciona" 
+            <a
+              href="#como-funciona"
               className="block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Como Funciona
             </a>
             {adType && (
-              <a 
-                href="#planos" 
+              <a
+                href="#planos"
                 className="block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Planos
               </a>
             )}
-            <a 
-              href="#seguranca" 
+            <a
+              href="#seguranca"
               className="block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Segurança
             </a>
-            {/* Botão Inscrever-se mobile escondido conforme solicitado */}
+            <a
+              href="#faq"
+              className="block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              FAQ
+            </a>
+            <a
+              href="#contato"
+              className="block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contato
+            </a>
           </nav>
         </div>
       </div>

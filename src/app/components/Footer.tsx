@@ -8,13 +8,12 @@ export default function Footer() {
   const [email, setEmail] = useState("");
   
   // Hook para submissão de email
-  const { 
-    submitEmail, 
-    isLoading, 
-    error, 
-    success, 
-    resetState,
-    deviceInfo 
+  const {
+    submitEmail,
+    isLoading,
+    error,
+    success,
+    resetState
   } = useEmailSubmission();
 
   const handleSubscribe = async (e: React.FormEvent) => {
@@ -112,25 +111,130 @@ export default function Footer() {
             </button>
           </div>
         )}
-        
-        <div id="footer-bottom" className="border-t border-white/20 pt-8">
-          <div id="footer-bottom-content" className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div id="footer-brand" className="flex items-center space-x-2">
-              <div id="footer-logo" className="w-8 h-8 flex items-center justify-center">
-                <Image 
-                  id="footer-logo-image" 
-                  src="/images/logos/logo-sem-titulo.png" 
-                  alt="Logo LegadoVivo" 
-                  width={32}
-                  height={32}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <span id="footer-brand-text" className="text-xl font-semibold">LegadoVivo</span>
+
+        {/* Footer Navigation - 5 Columns */}
+        <div id="footer-navigation" className="border-t border-white/20 pt-12 pb-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+
+            {/* Column 1 - Sobre */}
+            <div>
+              <h4 className="font-bold text-white mb-4">Sobre</h4>
+              <ul className="space-y-3 text-sm text-blue-100">
+                <li>
+                  <a href="#sobre" className="hover:text-white transition-colors duration-200">
+                    O que é LegadoVivo
+                  </a>
+                </li>
+                <li>
+                  <a href="#como-funciona" className="hover:text-white transition-colors duration-200">
+                    Como Funciona
+                  </a>
+                </li>
+                <li>
+                  <a href="#planos" className="hover:text-white transition-colors duration-200">
+                    Planos
+                  </a>
+                </li>
+              </ul>
             </div>
-            
-            <div id="footer-copyright" className="text-sm text-blue-200">
-              © 2025 LegadoVivo. Transformando mensagens em eternidade.
+
+            {/* Column 2 - Recursos */}
+            <div>
+              <h4 className="font-bold text-white mb-4">Recursos</h4>
+              <ul className="space-y-3 text-sm text-blue-100">
+                <li>
+                  <a href="#seguranca" className="hover:text-white transition-colors duration-200">
+                    Segurança
+                  </a>
+                </li>
+                <li>
+                  <a href="#faq" className="hover:text-white transition-colors duration-200">
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a href="#contato" className="hover:text-white transition-colors duration-200">
+                    Contato
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3 - Legal */}
+            <div>
+              <h4 className="font-bold text-white mb-4">Legal</h4>
+              <ul className="space-y-3 text-sm text-blue-100">
+                <li>
+                  <a href="/politica-privacidade" className="hover:text-white transition-colors duration-200">
+                    Política de Privacidade
+                  </a>
+                </li>
+                <li>
+                  <a href="/termos-uso" className="hover:text-white transition-colors duration-200">
+                    Termos de Uso
+                  </a>
+                </li>
+                <li>
+                  <a href="#contato" className="hover:text-white transition-colors duration-200">
+                    LGPD
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4 - Suporte */}
+            <div>
+              <h4 className="font-bold text-white mb-4">Suporte</h4>
+              <ul className="space-y-3 text-sm text-blue-100">
+                <li>
+                  <a href="mailto:felipesnunes@gmail.com" className="hover:text-white transition-colors duration-200">
+                    felipesnunes@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/5531994831043" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">
+                    (31) 99483-1043
+                  </a>
+                </li>
+                <li className="text-xs text-blue-200">
+                  Resposta em até 15 dias
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 5 - Logo e Redes Sociais */}
+            <div className="col-span-2 md:col-span-1">
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-10 h-10 flex items-center justify-center">
+                  <Image
+                    src="/images/logos/logo-sem-titulo.png"
+                    alt="Logo LegadoVivo"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="text-xl font-bold text-white">LegadoVivo</span>
+              </div>
+              <p className="text-sm text-blue-100 mb-4">
+                Transformando mensagens em eternidade.
+              </p>
+              {/* Future: Social media icons can be added here */}
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-white/20 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-200">
+              <div>
+                © 2025 LegadoVivo. Todos os direitos reservados.
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span>Conformidade LGPD</span>
+              </div>
             </div>
           </div>
         </div>

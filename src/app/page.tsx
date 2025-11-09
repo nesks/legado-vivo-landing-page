@@ -3,9 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import Header from "./components/Header";
+import FeaturesSection from "./components/FeaturesSection";
+import TechnicalDifferentialsSection from "./components/TechnicalDifferentialsSection";
 import PlansSection from "./components/PlansSection";
 import SecuritySection from "./components/SecuritySection";
 import TestimonialSection from "./components/TestimonialSection";
+import FAQSection from "./components/FAQSection";
+import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import LoadingScreen from "./components/LoadingScreen";
 import LazySection from "./components/LazySection";
@@ -185,6 +189,16 @@ export default function LegadoVivoLanding() {
               </button>
             </div>
           )}
+
+          {/* LGPD Badge */}
+          <div id="hero-lgpd-badge" className="mt-12 flex items-center justify-center gap-4 text-white/80">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <span className="text-sm md:text-base">
+              100% Seguro | Conformidade <strong className="text-[#f6e05e]">LGPD</strong>
+            </span>
+          </div>
         </div>
       </section>
 
@@ -195,9 +209,29 @@ export default function LegadoVivoLanding() {
             <h2 id="sobre-title" className="text-4xl md:text-5xl font-bold text-[#1a365d] mb-6">
               O que é o <span id="sobre-title-highlight" className="gradient-text">LegadoVivo?</span>
             </h2>
-            <p id="sobre-description" className="text-xl text-[#4a5568] max-w-4xl mx-auto leading-relaxed">
+            <p id="sobre-description" className="text-xl text-[#4a5568] max-w-4xl mx-auto leading-relaxed mb-8">
               Um aplicativo seguro e intuitivo onde você poderá escrever ou gravar mensagens para pessoas queridas — entregues automaticamente após seu falecimento, com total privacidade e cuidado.
             </p>
+
+            {/* Storytelling */}
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-amber-50 rounded-3xl p-8 md:p-12 mb-12">
+              <div className="space-y-6 text-left">
+                <p className="text-lg text-[#4a5568] leading-relaxed">
+                  <strong className="text-[#1a365d]">Imagine poder dizer &quot;eu te amo&quot; mesmo quando você não estiver mais aqui.</strong> Imagine deixar conselhos para seus filhos em momentos importantes da vida deles. Imagine compartilhar histórias de família que só você conhece.
+                </p>
+                <p className="text-lg text-[#4a5568] leading-relaxed">
+                  O <strong className="text-[#d69e2e]">LegadoVivo</strong> nasceu dessa necessidade humana de <strong>transcender o tempo</strong>. Não somos apenas uma plataforma de armazenamento — somos um <strong>guardião de memórias</strong>, um <strong>ponte entre gerações</strong>, e um <strong>testemunho de amor</strong>.
+                </p>
+                <p className="text-lg text-[#4a5568] leading-relaxed">
+                  Cada vídeo gravado é uma <strong className="text-[#1a365d]">mensagem de eternidade</strong>. Cada palavra escrita é um <strong className="text-[#1a365d]">legado que permanece</strong>. E cada destinatário que recebe essas mensagens sente a <strong className="text-[#d69e2e]">presença contínua do amor</strong>.
+                </p>
+                <div className="bg-white rounded-2xl p-6 border-l-4 border-[#f6e05e] mt-8">
+                  <p className="text-base text-[#1a365d] italic font-medium">
+                    &quot;Porque o amor verdadeiro não termina. Ele se transforma em memórias, histórias e legados que atravessam gerações.&quot;
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
           
           <div id="sobre-features" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -323,17 +357,33 @@ export default function LegadoVivoLanding() {
 
       {/* Seções importadas com lazy loading */}
       <LazySection>
+        <FeaturesSection />
+      </LazySection>
+
+      <LazySection>
+        <TechnicalDifferentialsSection />
+      </LazySection>
+
+      <LazySection>
         <PlansSection />
       </LazySection>
-      
+
       <LazySection>
         <SecuritySection />
       </LazySection>
-      
+
       <LazySection>
         <TestimonialSection />
       </LazySection>
-      
+
+      <LazySection>
+        <FAQSection />
+      </LazySection>
+
+      <LazySection>
+        <ContactSection />
+      </LazySection>
+
       <LazySection>
         <Footer />
       </LazySection>
