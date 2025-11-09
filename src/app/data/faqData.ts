@@ -12,7 +12,7 @@ export const faqData: FAQItem[] = [
   },
   {
     question: "Minhas mensagens estão realmente seguras?",
-    answer: "Sim! Utilizamos criptografia de ponta a ponta AES-256, a mesma tecnologia usada por bancos e governos. Seus dados são armazenados em servidores AWS no Brasil, com conformidade total à LGPD. Ninguém, nem mesmo nossa equipe, pode ler suas mensagens.",
+    answer: "Sim! Usamos a mesma tecnologia de segurança dos bancos. Seus dados ficam protegidos e armazenados no Brasil, seguindo todas as leis brasileiras. Ninguém, nem mesmo nossa equipe, pode ler suas mensagens.",
     category: "privacidade"
   },
   {
@@ -32,7 +32,7 @@ export const faqData: FAQItem[] = [
   },
   {
     question: "Qual o tamanho máximo dos vídeos?",
-    answer: "Vídeos podem ter até 2 minutos de duração. Nosso sistema de compressão inteligente reduz o tamanho em até 85% sem perder qualidade visível, garantindo upload rápido mesmo em conexões 4G.",
+    answer: "Vídeos podem ter até 2 minutos. Eles são otimizados automaticamente para envio rápido, mesmo se sua internet estiver lenta.",
     category: "tecnico"
   },
   {
@@ -57,22 +57,22 @@ export const faqData: FAQItem[] = [
   },
   {
     question: "O app funciona em iOS e Android?",
-    answer: "Sim! O LegadoVivo está disponível para iOS (iPhone/iPad) e Android. Utilizamos React Native com Expo para garantir a mesma experiência de qualidade em ambas as plataformas.",
+    answer: "Sim! O LegadoVivo funciona tanto no iPhone quanto no Android, com a mesma qualidade e facilidade em ambos.",
     category: "tecnico"
   },
   {
     question: "Posso gravar mensagens em áudio ou apenas vídeo?",
-    answer: "Atualmente focamos em vídeos pois transmitem mais emoção e presença. Você pode gravar vídeos curtos (até 2 minutos) com qualidade ajustável de 480p até 2160p (4K).",
+    answer: "Atualmente focamos em vídeos pois transmitem mais emoção e presença. Você pode gravar vídeos curtos de até 2 minutos com excelente qualidade.",
     category: "funcionamento"
   },
   {
     question: "Quanto custa manter o serviço rodando?",
-    answer: "Somos transparentes: nossos custos de infraestrutura AWS são aproximadamente R$ 0,19 por 1000 vídeos armazenados mensalmente, graças às nossas otimizações de compressão (92% de economia). Os créditos cobrem esses custos e o desenvolvimento contínuo.",
+    answer: "Mantemos nossos custos baixos para oferecer o melhor preço para você. Os créditos cobrem nossa infraestrutura e o desenvolvimento contínuo do aplicativo.",
     category: "planos"
   },
   {
     question: "E se a empresa fechar?",
-    answer: "Temos planos de contingência: backup em múltiplas regiões AWS, código-fonte em repositórios seguros, e um plano de transição caso necessário. Seus dados nunca serão perdidos ou expostos.",
+    answer: "Temos planos de segurança com múltiplos backups em diferentes locais. Seus dados nunca serão perdidos ou expostos, e garantimos uma transição segura caso necessário.",
     category: "privacidade"
   },
   {

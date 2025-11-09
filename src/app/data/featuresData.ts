@@ -8,9 +8,9 @@ export interface Feature {
 export const mainFeatures: Feature[] = [
   {
     title: "Gravação de Vídeos",
-    description: "Grave mensagens em vídeo de até 2 minutos com qualidade ajustável (480p a 4K). Compressão automática reduz o tamanho em 85% sem perder qualidade visível.",
+    description: "Grave mensagens em vídeo de até 2 minutos com excelente qualidade. Seus vídeos são otimizados automaticamente para envio rápido.",
     icon: "video",
-    highlight: "85% de economia"
+    highlight: "Rápido e fácil"
   },
   {
     title: "Gerenciamento de Destinatários",
@@ -25,7 +25,7 @@ export const mainFeatures: Feature[] = [
   },
   {
     title: "Privacidade Total",
-    description: "Seus vídeos são 100% privados. Não passam por moderação, não são analisados por IA, e apenas você e o destinatário têm acesso. Criptografia end-to-end em desenvolvimento.",
+    description: "Seus vídeos são 100% privados. Não passam por moderação, não são analisados, e apenas você e o destinatário têm acesso. Suas mensagens são completamente confidenciais.",
     icon: "lock",
     highlight: "100% privado"
   },
@@ -47,7 +47,7 @@ export const mainFeatures: Feature[] = [
   },
   {
     title: "Notificações Inteligentes",
-    description: "Receba alertas quando mensagens forem entregues, visualizadas, ou quando houver reações. Sistema de push notifications nativo para iOS e Android.",
+    description: "Receba alertas quando mensagens forem entregues, visualizadas, ou quando houver reações. Funciona perfeitamente em iPhone e Android.",
     icon: "bell"
   }
 ];
@@ -61,39 +61,39 @@ export interface TechnicalDifferential {
 
 export const technicalDifferentials: TechnicalDifferential[] = [
   {
-    title: "Compressão Inteligente",
-    description: "Tecnologia avançada de compressão reduz vídeos em até 85% sem perda perceptível de qualidade. Um vídeo de 2 minutos que seria 100MB fica com apenas 15MB.",
-    metric: "92% economia S3",
+    title: "Envio Rápido e Fácil",
+    description: "Seus vídeos ocupam muito menos espaço sem perder qualidade, permitindo envios rápidos até mesmo com internet lenta pelo celular.",
+    metric: "Super rápido",
     icon: "compression"
   },
   {
-    title: "Infraestrutura 100% Brasil",
-    description: "Todos os servidores e armazenamento estão na região AWS São Paulo (sa-east-1). Seus dados nunca saem do Brasil, garantindo conformidade total com a LGPD.",
-    metric: "0% transferência internacional",
+    title: "100% no Brasil",
+    description: "Todos os seus dados ficam armazenados no Brasil, seguindo rigorosamente as leis brasileiras de proteção de dados (LGPD).",
+    metric: "Conformidade LGPD",
     icon: "brazil"
   },
   {
-    title: "Criptografia Avançada",
-    description: "HTTPS/TLS para todas as comunicações. Tokens de autenticação armazenados com Keychain (iOS) e Keystore (Android). Criptografia end-to-end em desenvolvimento.",
-    metric: "Segurança bancária",
+    title: "Segurança Total",
+    description: "Suas mensagens são protegidas com a mesma segurança usada por bancos, garantindo total privacidade e proteção.",
+    metric: "Nível bancário",
     icon: "encryption"
   },
   {
-    title: "Performance Otimizada",
-    description: "API com tempo de resposta < 200ms (p95). Upload 4x mais rápido graças à compressão. Lazy loading nas seções para carregamento instantâneo da página.",
-    metric: "<200ms API",
+    title: "Aplicativo Veloz",
+    description: "O aplicativo é super rápido e responsivo. Você consegue enviar suas mensagens em segundos, mesmo com internet mais lenta.",
+    metric: "Muito rápido",
     icon: "speed"
   },
   {
-    title: "Backup Automático",
-    description: "Múltiplas cópias dos seus vídeos em diferentes zonas de disponibilidade AWS. Redundância geográfica garante que suas memórias nunca sejam perdidas.",
-    metric: "99.999999999% durabilidade",
+    title: "Suas Memórias Sempre Seguras",
+    description: "Fazemos várias cópias de segurança dos seus vídeos, garantindo que suas memórias nunca serão perdidas.",
+    metric: "Proteção total",
     icon: "backup"
   },
   {
-    title: "Monitoramento 24/7",
-    description: "CloudWatch monitora continuamente a saúde do sistema. Alertas automáticos para CPU, memória, disco e taxa de erros. Uptime target de 99.9%.",
-    metric: "99.9% uptime",
+    title: "Sempre Disponível",
+    description: "Nosso sistema funciona 24 horas por dia, 7 dias por semana, para estar sempre disponível quando você precisar.",
+    metric: "24/7 online",
     icon: "monitoring"
   }
 ];

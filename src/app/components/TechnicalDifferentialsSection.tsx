@@ -71,10 +71,10 @@ export default function TechnicalDifferentialsSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1a365d] mb-6">
-            Diferenciais <span className="gradient-text">Técnicos</span>
+            Por que escolher o <span className="gradient-text">LegadoVivo</span>?
           </h2>
           <p className="text-xl text-[#4a5568] max-w-3xl mx-auto">
-            Tecnologia de ponta para garantir o melhor desempenho, segurança e confiabilidade
+            Segurança, confiabilidade e facilidade para preservar suas memórias mais preciosas
           </p>
         </div>
 
@@ -132,63 +132,11 @@ export default function TechnicalDifferentialsSection() {
         {/* Bottom CTA */}
         <div className="mt-16 bg-gradient-to-br from-[#1a365d] to-[#2d5aa0] rounded-3xl p-8 md:p-12 shadow-2xl text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Tecnologia que você pode confiar
+            Suas memórias em boas mãos
           </h3>
-          <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
-            Desenvolvido com as melhores práticas de engenharia de software e infraestrutura em nuvem
+          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
+            Desenvolvido com cuidado e atenção para proteger seus momentos mais importantes
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-white/90">
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>NestJS 10</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>React Native 0.74</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>PostgreSQL 15</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>AWS S3</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>Redis 7</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
