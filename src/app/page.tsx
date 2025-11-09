@@ -368,21 +368,15 @@ export default function LegadoVivoLanding() {
         <PlansSection />
       </LazySection>
 
-      <LazySection>
-        <SecuritySection />
-      </LazySection>
+      <SecuritySection />
 
       <LazySection>
         <TestimonialSection />
       </LazySection>
 
-      <LazySection>
-        <FAQSection />
-      </LazySection>
+      <FAQSection />
 
-      <LazySection>
-        <ContactSection />
-      </LazySection>
+      <ContactSection />
 
       <LazySection>
         <Footer />
