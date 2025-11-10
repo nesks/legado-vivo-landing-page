@@ -210,14 +210,14 @@ export default function LegadoVivoLanding() {
               O que é o <span id="sobre-title-highlight" className="gradient-text">LegadoVivo?</span>
             </h2>
             <p id="sobre-description" className="text-xl text-[#4a5568] max-w-4xl mx-auto leading-relaxed mb-8">
-              Um aplicativo seguro e intuitivo onde você poderá escrever ou gravar mensagens para pessoas queridas — entregues automaticamente após seu falecimento, com total privacidade e cuidado.
+              Um aplicativo seguro e intuitivo onde você pode escrever ou gravar mensagens para pessoas queridas — programadas para serem entregues em datas específicas no futuro, com total privacidade e cuidado.
             </p>
 
             {/* Storytelling */}
             <div className="max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-amber-50 rounded-3xl p-8 md:p-12 mb-12">
               <div className="space-y-6 text-left">
                 <p className="text-lg text-[#4a5568] leading-relaxed">
-                  <strong className="text-[#1a365d]">Imagine poder dizer &quot;eu te amo&quot; mesmo quando você não estiver mais aqui.</strong> Imagine deixar conselhos para seus filhos em momentos importantes da vida deles. Imagine compartilhar histórias de família que só você conhece.
+                  <strong className="text-[#1a365d]">Imagine poder enviar &quot;eu te amo&quot; para datas importantes no futuro.</strong> Imagine deixar conselhos programados para seus filhos em momentos especiais da vida deles. Imagine compartilhar histórias de família que atravessam o tempo.
                 </p>
                 <p className="text-lg text-[#4a5568] leading-relaxed">
                   O <strong className="text-[#d69e2e]">LegadoVivo</strong> nasceu dessa necessidade humana de <strong>transcender o tempo</strong>. Não somos apenas uma plataforma de armazenamento — somos um <strong>guardião de memórias</strong>, um <strong>ponte entre gerações</strong>, e um <strong>testemunho de amor</strong>.
@@ -242,7 +242,7 @@ export default function LegadoVivoLanding() {
                 </svg>
               </div>
               <h3 id="feature-seguranca-title" className="text-xl font-semibold text-[#1a365d] mb-3">Segurança</h3>
-              <p id="feature-seguranca-desc" className="text-[#4a5568]">Criptografia de ponta a ponta para proteger suas mensagens mais preciosas</p>
+              <p id="feature-seguranca-desc" className="text-[#4a5568]">Segurança de nível bancário para proteger suas mensagens mais preciosas (criptografia end-to-end em desenvolvimento)</p>
             </div>
             
             <div id="feature-empatia" className="text-center hover-lift p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-white">
@@ -321,7 +321,7 @@ export default function LegadoVivoLanding() {
                 </div>
                 <h3 id="step-2-title" className="text-2xl font-semibold text-[#1a365d] mb-4">Escolha os destinatários</h3>
                 <p id="step-2-description" className="text-[#4a5568] leading-relaxed">
-                  Defina quem receberá suas mensagens e as condições para que sejam entregues no momento certo.
+                  Defina quem receberá suas mensagens e escolha a data específica para cada envio.
                 </p>
                 <div id="step-2-icon-container" className="mt-6 p-4 bg-gradient-to-br from-amber-50 to-blue-50 rounded-xl">
                   <svg id="step-2-icon" className="w-12 h-12 text-[#d69e2e] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -343,7 +343,7 @@ export default function LegadoVivoLanding() {
               </div>
               <h3 id="step-3-title" className="text-2xl font-semibold text-[#1a365d] mb-4">Confie na entrega segura</h3>
               <p id="step-3-description" className="text-[#4a5568] leading-relaxed">
-                Suas mensagens ficam protegidas e serão entregues de forma validada no momento certo, com total segurança.
+                Suas mensagens ficam protegidas e serão entregues automaticamente nas datas programadas, com total segurança.
               </p>
               <div id="step-3-icon-container" className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-amber-50 rounded-xl">
                 <svg id="step-3-icon" className="w-12 h-12 text-[#1a365d] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">

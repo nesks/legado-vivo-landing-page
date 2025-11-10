@@ -21,8 +21,8 @@ export default function SecuritySection() {
                   </svg>
                 </div>
                 <div id="feature-criptografia-content">
-                  <h3 id="feature-criptografia-title" className="text-xl font-semibold text-[#1a365d] mb-2">Criptografia de ponta a ponta</h3>
-                  <p id="feature-criptografia-desc" className="text-[#4a5568]">Suas mensagens são criptografadas desde o momento da criação até a entrega final, garantindo total privacidade.</p>
+                  <h3 id="feature-criptografia-title" className="text-xl font-semibold text-[#1a365d] mb-2">Segurança Avançada</h3>
+                  <p id="feature-criptografia-desc" className="text-[#4a5568]">Suas mensagens são protegidas com criptografia de nível bancário. Estamos implementando criptografia end-to-end para garantir que apenas você e o destinatário tenham acesso ao conteúdo.</p>
                 </div>
               </div>
               
@@ -45,8 +45,8 @@ export default function SecuritySection() {
                   </svg>
                 </div>
                 <div id="feature-validacao-content">
-                  <h3 id="feature-validacao-title" className="text-xl font-semibold text-[#1a365d] mb-2">Mensagens validadas com responsabilidade</h3>
-                  <p id="feature-validacao-desc" className="text-[#4a5568]">Sistema inteligente de validação garante que as mensagens sejam entregues no momento certo e da forma correta.</p>
+                  <h3 id="feature-validacao-title" className="text-xl font-semibold text-[#1a365d] mb-2">Agendamento Preciso</h3>
+                  <p id="feature-validacao-desc" className="text-[#4a5568]">Sistema inteligente de agendamento garante que as mensagens sejam entregues exatamente na data programada por você.</p>
                 </div>
               </div>
             </div>

@@ -16,8 +16,8 @@ export const faqData: FAQItem[] = [
     category: "privacidade"
   },
   {
-    question: "Como vocês garantem a entrega após meu falecimento?",
-    answer: "Temos um sistema de verificação com múltiplas camadas: certificados de óbito oficiais, validação por documentos, confirmação por familiares autorizados, e prazos de segurança. Nunca liberamos mensagens sem validação adequada.",
+    question: "Como funciona o agendamento das mensagens?",
+    answer: "Você programa a data específica para cada mensagem ser enviada. O sistema entrega automaticamente na data escolhida, garantindo que suas palavras cheguem no momento certo. Você pode editar ou cancelar mensagens programadas a qualquer momento antes do envio.",
     category: "funcionamento"
   },
   {

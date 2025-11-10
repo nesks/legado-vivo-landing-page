@@ -19,9 +19,9 @@ export const mainFeatures: Feature[] = [
   },
   {
     title: "Agendamento Futuro",
-    description: "Programe a entrega das suas mensagens para momentos específicos no futuro. Sistema de validação garante entrega apenas após confirmação apropriada.",
+    description: "Programe a entrega das suas mensagens para datas específicas no futuro. As mensagens são enviadas automaticamente na data escolhida por você.",
     icon: "calendar",
-    highlight: "Entrega validada"
+    highlight: "Envio programado"
   },
   {
     title: "Privacidade Total",

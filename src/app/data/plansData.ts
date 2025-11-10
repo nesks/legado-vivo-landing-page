@@ -147,7 +147,7 @@ export const plansData: Record<Exclude<AdType, null>, AdData> = {
         checkColor: "#2d5aa0",
         features: [
           { text: "10 mensagens criptografadas", included: true },
-          { text: "Criptografia de ponta", included: true },
+          { text: "Segurança bancária (E2E em dev)", included: true },
           { text: "Proteção total", included: true }
         ]
       },
