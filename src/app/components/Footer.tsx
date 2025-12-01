@@ -175,6 +175,11 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
+                  <a href="/seguranca-infantil" className="hover:text-white transition-colors duration-200">
+                    Segurança Infantil
+                  </a>
+                </li>
+                <li>
                   <a href="#contato" className="hover:text-white transition-colors duration-200">
                     LGPD
                   </a>
